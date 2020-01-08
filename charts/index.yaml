@@ -13,6 +13,6 @@ entries:
     - https://github.com/hashicorp/vault-helm
     - https://github.com/hashicorp/vault-k8s
     urls:
-    - https://theclinician.github.io/vault-helm/vault-0.3.1.tgz
+    - https://github.com/theclinician/vault-helm/blob/gh-pages/charts/vault-0.3.1.tgz
     version: 0.3.1
 generated: "2020-01-08T06:35:32.0770689Z"
