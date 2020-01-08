@@ -165,7 +165,7 @@ storage might be desired by the user.
 {{- define "vault.volumeclaims" -}}
   {{- if or (eq (.Values.server.dataStorage.enabled | toString) "true") (eq (.Values.server.auditStorage.enabled | toString) "true") }}
   volumeClaimTemplates:
-      {{- if and (eq (.Values.server.dataStorage.enabled | toString) "true") (eq .mode "standalone") }}
+      {{- if eq (.Values.server.dataStorage.enabled | toString) "true" }}
     - metadata:
         name: data
       spec:
