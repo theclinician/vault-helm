@@ -163,7 +163,7 @@ might not use data storage since Consul is likely it's backend, however, audit
 storage might be desired by the user.
 */}}
 {{- define "vault.volumeclaims" -}}
-  {{- if and (ne .mode "dev") (or .Values.server.dataStorage.enabled .Values.server.auditStorage.enabled) }}
+  {{- if or (eq (.Values.server.dataStorage.enabled | toString) "true") (eq (.Values.server.auditStorage.enabled | toString) "true") }}
   volumeClaimTemplates:
       {{- if and (eq (.Values.server.dataStorage.enabled | toString) "true") (eq .mode "standalone") }}
     - metadata:
