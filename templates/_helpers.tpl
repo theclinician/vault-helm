@@ -142,11 +142,9 @@ based on the mode configured.
             - name: audit
               mountPath: /vault/audit
   {{ end }}
-  {{ if eq .mode "standalone" }}
-    {{ if eq (.Values.server.dataStorage.enabled | toString) "true" }}
+  {{ if eq (.Values.server.dataStorage.enabled | toString) "true" }}
             - name: data
               mountPath: /vault/data
-    {{ end }}
   {{ end }}
   {{ if and (ne .mode "dev") (or (ne .Values.server.standalone.config "")  (ne .Values.server.ha.config "")) }}
             - name: config
